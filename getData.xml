@@ -2,10 +2,15 @@
     <requirements>
     </requirements>
     <command detect_errors="exit_code"><![CDATA[
-	 python $__tool_directory__/script.py $input1 output.csv    
+	 python $__tool_directory__/script.py $input1 output1.csv    
     ]]></command>
     <inputs>
-        <param type="data" name="input1" format="bigWig" />
+        <param type="data" name="input1" />
+	<param name="format" type="select" label="Data Format">
+		<option value="BigWig" selected="true">BigWig</option>
+		<option value="BigBed">BigBed</option>
+		<option value="tbx">tbx</option>
+	</param>
 	<param name="chromosome_number" type="text" label="Select chromosome" help="(-c)" />
 	<param name="coordinate_start" type="integer" label="Begin analysis at"
 		value="0" min="0" max="3000000" help="(-s)" />
