@@ -2,7 +2,7 @@
     <requirements>
     </requirements>
     <command detect_errors="exit_code"><![CDATA[
-	 python $__tool_directory__/script.py $input1 output1.csv    
+	 python $__tool_directory__/script.py $input1 $format $chromosome_number $coordinate_start $coordinate_end > output1.csv     
     ]]></command>
     <inputs>
         <param type="data" name="input1" />
@@ -13,9 +13,9 @@
 	</param>
 	<param name="chromosome_number" type="text" label="Select chromosome" help="(-c)" />
 	<param name="coordinate_start" type="integer" label="Begin analysis at"
-		value="0" min="0" max="3000000" help="(-s)" />
+		value="0" min="0" max="3000000000" help="(-s)" />
 	<param name="coordinate_end" type="integer" label="End analysis at"
-		value="255" min="0" max="3000000" help="(-e)" />
+		value="255" min="0" max="3000000000" help="(-e)" />
     </inputs>
     <outputs>
         <data name="output1" format="csv" />
